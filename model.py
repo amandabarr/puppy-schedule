@@ -31,7 +31,7 @@ class Event(db.Model):
 def setup_tables():
     db.create_all()
 
-    test_event = Event(event_time=(datetime.now()), event_type="pee")
+    test_event = Event(event_time=(datetime.utcnow()), event_type="pee")
     db.session.add(test_event)
     db.session.commit()
 

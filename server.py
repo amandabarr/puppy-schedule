@@ -4,8 +4,6 @@ from datetime import date, datetime
 import json
 import os
 import pprint
-import requests
-import crud
 
 from jinja2 import StrictUndefined
 
