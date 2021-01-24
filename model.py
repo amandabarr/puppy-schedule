@@ -24,6 +24,13 @@ class Event(db.Model):
     event_time = db.Column(db.DateTime)
     event_type = db.Column(db.String)
 
+    def to_dict(self):
+        return {
+            "eventId": self.event_id,
+            "eventTime": self.event_time,
+            "eventType": self.event_type
+        }
+
     def __repr__(self):
         return f"Event event_id = {self.event_id}, event_type={self.event_type}, event_time = {self.event_time}"
 

@@ -2,7 +2,12 @@ from model import db, Event
 from datetime import datetime
 
 
-def add_event(event_type, event_time=datetime.utcnow()):
+def add_event(event_type, event_time=None):
+    if event_time == None:
+        event_time = datetime.utcnow()
+    else:
+        event_time = datetime.utcfromtimestamp(int(event_time))
+
     event = Event(event_time=event_time, event_type=event_type)
 
     db.session.add(event)
