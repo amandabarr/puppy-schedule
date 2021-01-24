@@ -2,7 +2,7 @@ from model import db, Event
 from datetime import datetime
 
 
-def add_event(event_type, event_time=datetime.now()):
+def add_event(event_type, event_time=datetime.utcnow()):
     event = Event(event_time=event_time, event_type=event_type)
 
     db.session.add(event)
@@ -11,5 +11,13 @@ def add_event(event_type, event_time=datetime.now()):
     return event
 
 
+def get_all_events():
+    return db.session.query(Event).all()
+
+
 if __name__ == '__main__':
     from server import app
+    from model import connect_to_db
+    connect_to_db(app)
+    add_event("poop")
+    print(get_all_events())
