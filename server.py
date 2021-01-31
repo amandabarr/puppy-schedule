@@ -5,6 +5,7 @@ import crud
 import json
 import os
 import pprint
+from jinja2 import StrictUndefined
 
 
 app = Flask(__name__)
@@ -14,13 +15,7 @@ app.jinja_env.undefined = StrictUndefined
 
 @app.route("/")
 def root():
-    return """
-    <html>
-    <body>
-    <h1>I am the landing page</h1>
-    </body>
-    </html>
-    """
+    return render_template("base.html")
 
 
 @app.route("/api/events")
