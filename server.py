@@ -15,7 +15,10 @@ app.jinja_env.undefined = StrictUndefined
 
 @app.route("/")
 def root():
-    return render_template("base.html")
+    event_type = "pee"
+    events = [event for event in crud.get_all_events(
+    ) if event.event_type == event_type]
+    return render_template("base.html", event_type=event_type, events=events)
 
 
 @app.route("/api/test")

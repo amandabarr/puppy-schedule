@@ -1,0 +1,22 @@
+<p>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Event Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>
+                    {{ event.event_type }}
+                </td>
+                <td>
+                    {{ event.event_time }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</p>
