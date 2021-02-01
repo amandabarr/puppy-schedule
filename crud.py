@@ -3,6 +3,7 @@ from datetime import datetime
 
 
 def add_event(event_type, event_time=None):
+    event_type = event_type.lower().replace(" ", "_")
     if event_time == None:
         event_time = datetime.utcnow()
     else:

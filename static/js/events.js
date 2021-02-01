@@ -11,7 +11,7 @@ const sayByeToPerson = (name) => {
 }
 
 // called with: sayBye()
-sayByeToPerson("Bobby")
+// sayByeToPerson("Bobby")
 
 
 //vanilla js on click event
@@ -31,14 +31,11 @@ sayByeToPerson("Bobby")
 // }
 
 $('.event_button').on('click', (event) => {
-    alert('clicked the button!');
     const formInput = {
         "eventType": $(event.target).html()
     };
-    console.log(formInput);
     $.post("/api/events/add", formInput, (response) => {
-        console.log(formInput);
-        alert(response);
+        alert(`You have added ${response.eventType} to the schedule`);
     });
 });
 
