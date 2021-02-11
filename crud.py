@@ -22,6 +22,22 @@ def get_all_events():
     return db.session.query(Event).all()
 
 
+def import_old_events():
+    # open the CSV file
+
+    # read each lines
+
+    # loop through each line
+
+        # split by commas to separate into pieces
+
+        # assign each part to proper event property
+
+        # call add event with that info
+
+    pass
+
+
 if __name__ == '__main__':
     from server import app
     from model import connect_to_db

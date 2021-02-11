@@ -12,12 +12,24 @@
     <div>
 
         <h1>Welcome to Puppy Tracker</h1>
-        <button class="event_button" id="add_pee">Pee</button>
-        <button class="event_button" id="add_poop">Poop</button>
-        <button class="event_button" id="eat">Eat</button>
-        <button class="event_button" id="crate_in">Crate In</button>
-        <button class="event_button" id="crate_out">Crate Out</button>
-        <button class="event_button" id="bath">Bath</button>
+            <form>
+                <div>
+                    <label for="event_location">Location:</label>
+                    <input type="text" id="event_location" placeholder="inside | outside | N/A">
+                </div>
+                <div>
+                    <label for="event_comment">Comment:</label>
+                    <input type="text" id="event_comment" placeholder="Optional">
+                </div>
+            </form>
+
+            <button class="event_button" id="add_pee">Pee</button>
+            <button class="event_button" id="add_poop">Poop</button>
+            <button class="event_button" id="eat">Eat</button>
+            <button class="event_button" id="crate_in">Crate In</button>
+            <button class="event_button" id="crate_out">Crate Out</button>
+            <button class="event_button" id="bath">Bath</button>
+
 
 
     </div>

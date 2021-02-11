@@ -32,7 +32,9 @@ const sayByeToPerson = (name) => {
 
 $('.event_button').on('click', (event) => {
     const formInput = {
-        "eventType": $(event.target).html()
+        "eventType": $(event.target).html(),
+        "eventLocation": $('#event_location').val(),
+        "eventComment": $('#event_comment').val()
     };
     $.post("/api/events/add", formInput, (response) => {
         alert(`You have added ${response.eventType} to the schedule`);
