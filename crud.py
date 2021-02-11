@@ -2,14 +2,15 @@ from model import db, Event
 from datetime import datetime
 
 
-def add_event(event_type, event_time=None):
+def add_event(event_type, event_time=None, event_location=None, event_comment=None):
     event_type = event_type.lower().replace(" ", "_")
     if event_time == None:
         event_time = datetime.utcnow()
     else:
         event_time = datetime.utcfromtimestamp(int(event_time))
 
-    event = Event(event_time=event_time, event_type=event_type)
+    event = Event(event_time=event_time, event_type=event_type,
+                  event_location=event_location, event_comment=event_comment)
 
     db.session.add(event)
     db.session.commit()

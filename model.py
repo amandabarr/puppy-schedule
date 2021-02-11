@@ -23,12 +23,16 @@ class Event(db.Model):
     event_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     event_time = db.Column(db.DateTime)
     event_type = db.Column(db.String)
+    event_location = db.Column(db.String)
+    event_comment = db.Column(db.String)
 
     def to_dict(self):
         return {
             "eventId": self.event_id,
             "eventTime": self.event_time,
-            "eventType": self.event_type
+            "eventType": self.event_type,
+            "eventLocation": self.event_location,
+            "eventComment": self.event_comment
         }
 
     def __repr__(self):
@@ -38,8 +42,14 @@ class Event(db.Model):
 def setup_tables():
     db.create_all()
 
-    test_event = Event(event_time=(datetime.utcnow()), event_type="pee")
+    test_event = Event(event_time=(datetime.utcnow()),
+                       event_type="pee", event_location=None, event_comment=None)
     db.session.add(test_event)
+
+    test_event2 = Event(event_time=(datetime.utcnow()),
+                        event_type="pee", event_location="outside", event_comment="Went on the Fresh Patch")
+    db.session.add(test_event2)
+
     db.session.commit()
 
 

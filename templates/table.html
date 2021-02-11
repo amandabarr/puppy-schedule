@@ -3,7 +3,9 @@
         <thead>
             <tr>
                 <th>Event</th>
-                <th>Event Time</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Comment</th>
             </tr>
         </thead>
         <tbody>
@@ -14,6 +16,12 @@
                 </td>
                 <td>
                     {{ event.event_time }}
+                </td>
+                <td>
+                    {{ event.event_location }}
+                </td>
+                <td>
+                    {{ event.event_comment }}
                 </td>
             </tr>
             {% endfor %}

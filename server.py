@@ -36,7 +36,10 @@ def get_events():
 def add_event():
     event_type = request.form["eventType"]
     event_time = request.form.get("eventTime", None)
-    event = crud.add_event(event_type, event_time)
+    event_location = request.form.get("eventLocation", None)
+    event_comment = request.form.get("eventComment", None)
+    event = crud.add_event(event_type, event_time,
+                           event_location, event_comment)
     return jsonify(event.to_dict())
 
 
