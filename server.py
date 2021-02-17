@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, flash, session, redirect, jsonify, escape
 from model import connect_to_db
 from datetime import date, datetime
+from dotenv import load_dotenv
 import crud
 import json
 import os
@@ -44,5 +45,6 @@ def add_event():
 
 
 if __name__ == '__main__':
+    load_dotenv()
     connect_to_db(app)
     app.run(debug=True, host='0.0.0.0')

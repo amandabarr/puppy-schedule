@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -6,7 +7,11 @@ from datetime import datetime
 db = SQLAlchemy()
 
 
-def connect_to_db(flask_app, db_uri="postgresql:///puppy_schedule", echo=True):
+def connect_to_db(flask_app, echo=True):
+    db_uri = os.environ.get('DATABASE_URL')
+    if db_uri is None:
+        raise Exception("Please specify a database URI to connect to")
+
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
     flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
