@@ -1,0 +1,8 @@
+{
+  "name": "Puppy Schedule",
+  "description": "An app to keep track of your puppy's schedule",
+  "image": "heroku/python",
+  "repository": "https://github.com/amandabarr/puppy-schedule",
+  "keywords": ["python", "flask"],
+  "addons": ["heroku-postgresql"]
+}
