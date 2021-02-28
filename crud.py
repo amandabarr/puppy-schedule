@@ -38,13 +38,19 @@ def import_old_events():
     data_file = open("past-data.csv", "r")
     data_list = data_file.readlines()
     for line in data_list:
-        data_list = line.split(",")
+        print(f"Processing: {line}")
+        data_list = line.split(";")
+        line_parts = " | ".join(data_list)
+        print(f"Split line parts: {line_parts}")
         # for data in data_list:
         event_type = data_list[0]
         event_time = str(int(datetime.strptime(
             data_list[1], '%Y-%m-%d %H:%M').timestamp()))
-        event_comment = data_list[2][1:-2]
-        event_location = data_list[3].strip()
+        if len(data_list) >= 3:
+            event_comment = data_list[2][1:-2]
+        if len(data_list) >= 4:
+            event_location = data_list[3].strip()
+
         add_event(event_type, event_time, event_location, event_comment)
 
 
