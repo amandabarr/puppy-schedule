@@ -25,6 +25,11 @@ def test():
     return "test"
 
 
+@app.route("/api/test2")
+def test2():
+    return "test2"
+
+
 @app.route("/api/events")
 def get_events():
     all_events = crud.get_all_events()
