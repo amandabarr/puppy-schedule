@@ -1,6 +1,6 @@
 Puppy Tracker is a simple way to keep track of all your puppy's daily activities! This is a helpful way to see potty training trends and decide how often you should take the pup outside!
 
-![Image of Puppy Tracker](https://photos.google.com/search/_tra_/photo/AF1QipPB6dLRp5rpnk5OqBQsf3cmfo1YgUxZlDKmxK1x)
+![Puppy Tracker screenshot](screenshots/PuppyTracker.png)
 
 ## About Me
 
